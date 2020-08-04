@@ -100,40 +100,23 @@ app.get("/adminLogin", (req, res) => {
 });
 
 app.get("/dashboard",(req,res)=>{
-
-  //    const complaint = dare[0]["Complaint"];
-  //    console.log(complaint [4]["complan"])
-  //    console.log(dare[0]["Complaint"])
   Database.find({}, function(err,found){
     if(err){
         console.log(err);
         res.status(500).send();
                    
     } else{
-        
-        // console.log(found.length);
-        
-        
-        // console.log(found.JSON);
        const dare = found
-    //    const complaint = dare[0]["Complaint"];
-    //    console.log(complaint [4]["complan"])
-    //    console.log(dare[0]["Complaint"])
- 
         res.render("dashboard",{list:dare});
-
     }
 })
 
-
-// res.render("dashboard")
 });
 
 app.get("*", (req, res) => {
   res.render("404");
 });
-/* admin dashboard*/
-//admin dashboard
+
 
 
 /*port connection*/
